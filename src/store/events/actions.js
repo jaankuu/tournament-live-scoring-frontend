@@ -7,13 +7,14 @@ const startLoading = () => ({ type: "START_LOADING" })
 const stopLoading = () => ({ type: "STOP_LOADING"})
 
 
-  export const getEvents = () => async (dispatch, getState) => {
+  export const fetchEvents = () => async (dispatch, getState) => {
       try {
           dispatch(startLoading())
 
           const response = await axios.get(`${apiUrl}/events`)
+          const events = response.data
           console.log("events request response:: ", response)
-          dispatch(storeEvents(response))
+          dispatch(storeEvents(events))
 
           dispatch(stopLoading())
 
