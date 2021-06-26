@@ -6,10 +6,9 @@ const initialState = {
   export default function reducer(state = initialState, action) {
     switch (action.type) {
       case "STORE_EVENTS": {
-        const events = action.payload;
           return {
             ...state,
-            allEvents: events
+            allEvents: action.payload
           }
         }
         case "START_LOADING": {

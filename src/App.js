@@ -14,9 +14,9 @@ function App() {
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/events" component={Events} />
-      <Route path="/events/:id" component={EventDetail} />
       <Route path="/create-event" component={CreateEvent} />
       <Route path="/login" component={Login} />
+      <Route path="/events/:id" component={EventDetail} />
     </Switch>
     </div>
   );
