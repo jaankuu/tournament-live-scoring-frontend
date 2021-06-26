@@ -1,6 +1,6 @@
 const initialState = {
-  loading: false,
-  details: {}
+  loading: true,
+  details: []
 }
 
 export default function reducer(state = initialState, action) {

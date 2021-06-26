@@ -8,6 +8,8 @@ export default function EventDetails(props) {
       <p>{props.location}</p>
       <p>{props.description}</p>
       <p>Players:</p>
+      
+      <p>Results:</p>
     </div>
   )
 }

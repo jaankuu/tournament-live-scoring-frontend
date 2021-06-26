@@ -16,7 +16,7 @@ const Events = () => {
 
     return (
         <>
-            <h1>This is Events page</h1>
+            <h3>These are all available events</h3>
             <div>
                 {eventsLoading ? "Loading.." : events.map(event => {
                     return (
