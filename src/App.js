@@ -16,7 +16,7 @@ function App() {
       <Route path="/events" component={Events} />
       <Route path="/create-event" component={CreateEvent} />
       <Route path="/login" component={Login} />
-      <Route path="/events/:id" component={EventDetail} />
+      <Route path="/event/:id" component={EventDetail} />
     </Switch>
     </div>
   );

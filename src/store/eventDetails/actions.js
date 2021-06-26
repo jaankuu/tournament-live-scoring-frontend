@@ -14,7 +14,7 @@ export const fetchEventDetail = (id) => async (dispatch, getState) => {
         dispatch(startLoading())
 
         const response = await axios.get(`${apiUrl}/events/${id}`)
-        const eventDetails = response.data.event
+        const eventDetails = response.data
 
         console.log("event DETAIL response:: ", eventDetails)
 
