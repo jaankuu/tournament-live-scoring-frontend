@@ -24,6 +24,8 @@ const Events = () => {
                             key={event.id}
                             name={event.name}
                             id={event.id}
+                            location={event.location}
+                            date={event.date}
                             />
                     )   
                 })}

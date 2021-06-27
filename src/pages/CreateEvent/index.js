@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import DatePicker from 'react-date-picker';
 
 import { selectToken, selectIsAdmin } from "../../store/user/selectors"
 import { postEvent } from "../../store/eventDetails/actions";
@@ -16,16 +16,17 @@ const CreateEvent = () => {
     const dispatch = useDispatch()
 
     const [ name, setName ] = useState(null)
-    const [ time, setTime ] = useState(null)
+    const [ date, setDate ] = useState(new Date());
     const [ location, setLocation ] = useState(null)
     const [ description, setDescription ] = useState(null)
     const [ active, setActive ] = useState(false)
     const [ userId, setUserId ] = useState(null)
 
     function submitForm(event) {
-        dispatch(postEvent(name, time, location, description, active, userId))
+        dispatch(postEvent(name, date, location, description, active, userId))
+        console.log("postEvent::", name, date, location, description, active, userId)
         setName(null)
-        setTime(null)
+        setDate(null)
         setLocation(null)
         setDescription(null)
         setActive(false)
@@ -59,14 +60,13 @@ const CreateEvent = () => {
           </Form.Group>
   
           <Form.Group>
-            <Form.Label>Time</Form.Label>
-            <Form.Control
-              value={time}
-              onChange={(event) => setTime(event.target.value)}
-              type="number"
-              placeholder="Set event time"
-              required
+            <Form.Label>Date</Form.Label>
+            <p>
+            <DatePicker
+              onChange={setDate}
+              value={date}
             />
+            </p>
          
           </Form.Group>
   
@@ -85,7 +85,7 @@ const CreateEvent = () => {
             <Form.Control
               value={description}
               onChange={(event) => setDescription(event.target.value)}
-              type="text"
+              type="textarea"
               required
             />
           </Form.Group>
