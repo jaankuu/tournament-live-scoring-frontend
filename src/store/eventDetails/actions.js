@@ -27,7 +27,7 @@ export const fetchEventDetail = (id) => async (dispatch, getState) => {
 }
 
 
-export const postEvent = (name, time, location, description, active, userId) => async (dispatch, getState) => {
+export const postEvent = (name, date, location, description, active, userId) => async (dispatch, getState) => {
     try {
         // const { token } = selectUser(getState())
     
@@ -35,7 +35,7 @@ export const postEvent = (name, time, location, description, active, userId) => 
             `${apiUrl}/createEvent`,
             {
                 name,
-                time,
+                date,
                 location,
                 description,
                 active,

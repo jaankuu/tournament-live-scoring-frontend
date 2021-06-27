@@ -23,6 +23,7 @@ const EventDetail = () => {
       console.log("here is SINGLE event::", event)
       }
 
+
     return (
         <>
         {eventDetailsLoading ? "Loading.." :
