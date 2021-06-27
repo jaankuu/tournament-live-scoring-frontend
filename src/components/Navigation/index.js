@@ -15,6 +15,7 @@ export default function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 //   const showEnterScores = token !== null
   const showCreateEvent = token !== null && user.isAdmin === true
+  const showSignUp = token === null
 
   return (
     <Navbar bg="light" expand="lg">
@@ -27,6 +28,9 @@ export default function Navigation() {
           <NavbarItem path="/events" linkText="Events" />
           {showCreateEvent ? (
           <NavbarItem path="/create-event" linkText="Create an event" />
+          ) : null }
+          {showSignUp ? (
+            <NavbarItem path="/signup" linkText="Sign up" />
           ) : null }
           {loginLogoutControls}
         </Nav>

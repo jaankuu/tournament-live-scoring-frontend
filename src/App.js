@@ -6,6 +6,7 @@ import EventDetail from "./pages/EventDetail"
 import CreateEvent from "./pages/CreateEvent"
 import Navigation from "./components/Navigation";
 import Login from "./pages/Login"
+import SignUp from "./pages/SignUp"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/create-event" component={CreateEvent} />
       <Route path="/login" component={Login} />
       <Route path="/event/:id" component={EventDetail} />
+      <Route path="/signup" component={SignUp} />
     </Switch>
     </div>
   );

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getEventDetails, getEventDetailsLoading } from "../../store/eventDetails/selectors"
 import EventDetails from "../../components/EventDetail"
 import { fetchEventDetail } from "../../store/eventDetails/actions";
+import { Table } from "../../components/Table/Table"
 
 
 const EventDetail = () => {
@@ -11,7 +12,6 @@ const EventDetail = () => {
     const { id } = useParams()
     const eventDetailsLoading = useSelector(getEventDetailsLoading)
     const event = useSelector(getEventDetails).event
-    const scoresForEvent = useSelector(getEventDetails).scores
     
 
     useEffect(() => {
@@ -25,24 +25,18 @@ const EventDetail = () => {
 
     return (
         <>
-      hello
-     {eventDetailsLoading ? "Loading.." :
-        <EventDetails
-        key={event.id}
-        name={event.name}
-        time={event.time}
-        location={event.location}
-        description={event.description}
-        />
+        {eventDetailsLoading ? "Loading.." :
+            <EventDetails
+            key={event.id}
+            name={event.name}
+            time={event.time}
+            location={event.location}
+            description={event.description}
+            />
         }
-        {eventDetailsLoading ? "Loading..." : scoresForEvent.map(score => {
-            return (
-                <div>
-                <p>{score.player}</p>
-                <p>{score.eachScore}</p>
-                </div>
-            )
-        })}
+        {eventDetailsLoading ? "Loading.." :
+        <Table />
+        }
         </>
     )
 }
