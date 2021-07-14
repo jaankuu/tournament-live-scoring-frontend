@@ -6,8 +6,8 @@ import Card from "react-bootstrap/Card";
 export default function Event(props) {
   return (
     <div>
-      <Container fluid>
-        <Card>
+      <Container class="container-sm">
+        <Card class="border border-primary p-3 my-3">
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
               <Card.Text>

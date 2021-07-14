@@ -4,8 +4,9 @@ const Homepage = () => {
 
     return (
         <>
-            This is homepage
+        <p>
             <PointsTable />
+        </p>
         </>
     )
 }

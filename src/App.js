@@ -7,6 +7,7 @@ import CreateEvent from "./pages/CreateEvent"
 import Navigation from "./components/Navigation";
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
+import EnterScores from "./pages/EnterScores"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/event/:id" component={EventDetail} />
       <Route path="/signup" component={SignUp} />
+      <Route path="/enter-scores" component={EnterScores} />
     </Switch>
     </div>
   );

@@ -30,7 +30,10 @@ export default function Navigation() {
           <NavbarItem path="/events" linkText="Events" />
           {showCreateEvent ? (
           <NavbarItem path="/create-event" linkText="Create an event" />
-          ) : null }
+          ) : null } 
+          {showCreateEvent ? (
+            <NavbarItem path="/enter-scores" linkText="Enter scores" />
+            ) : null }
           {showSignUp ? (
             <NavbarItem path="/signup" linkText="Sign up" />
           ) : null }
